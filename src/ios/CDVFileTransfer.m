@@ -104,10 +104,11 @@ static CFIndex WriteDataToStream(NSData* data, CFWriteStreamRef stream)
 {
     [req setValue:@"XMLHttpRequest" forHTTPHeaderField:@"X-Requested-With"];
 
+    /* iOS upgrade to 6.1.0 for Alexandria SSO issue IS-1233
     NSString* userAgent = [self.commandDelegate userAgent];
     if (userAgent) {
         [req setValue:userAgent forHTTPHeaderField:@"User-Agent"];
-    }
+    }*/
 
     for (NSString* headerName in headers) {
         id value = [headers objectForKey:headerName];
